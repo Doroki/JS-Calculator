@@ -1,0 +1,12 @@
+@mixin queries($size) {
+    @if $size == larger {
+      @media (max-width: 440px) { @content; }
+    }
+    @else if $size == medium {
+      @media (max-width: 400px) { @content; }
+    }
+    @else if $size == small {
+      @media (max-width: 330px)  { @content; }
+    }
+  }
+

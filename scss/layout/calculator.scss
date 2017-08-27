@@ -3,4 +3,8 @@
     min-width: 100%;
     min-height: calc(100% - 140px);
     padding-top: 9%;
+
+    @include queries(larger){
+        padding: 0;
+    }
 }
