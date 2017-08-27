@@ -1,0 +1,30 @@
+
+
+//========= RESET =========//
+@import "base/reset.scss";
+
+//========= HELPERS =========//
+@import "helpers/variables.scss";
+@import "helpers/mixins.scss";
+
+//========= BODY STYLE =========//
+@import "base/body-style.scss";
+
+
+/*=============================================
+=            LAYOUT            =
+=============================================*/
+@import "layout/header.scss";
+@import "layout/calculator.scss";
+@import "layout/footer.scss";
+/*=====  End of LAYOUT  ======*/
+
+
+/*=============================================
+=            COMPONENTS            =
+=============================================*/
+@import "components/calculator-body.scss";
+@import "components/calculator-buttons.scss";
+@import "components/calculator-screen.scss";
+/*=====  End of COMPONENTS  ======*/
+

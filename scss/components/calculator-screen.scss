@@ -1,0 +1,31 @@
+.calc {
+    &__score {
+        width: 360px;
+        min-height: 50px;
+        border: 3px solid $calc-screen;
+        background-color: $calc-screen-border;
+        font-family: 'Orbitron', sans-serif;
+        font-size: $normal-font;
+        text-align: right;
+
+        &:first-of-type {
+            margin-top: 10px;
+            border-bottom: 1px dashed lightgray;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        &:last-of-type {
+            border-top: none;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            -webkit-box-shadow: inset 0px -60px 30px -60px rgba(0,0,0,1);
+            -moz-box-shadow: inset 0px -60px 30px -60px rgba(0,0,0,1);
+            box-shadow: inset 0px -60px 30px -60px rgba(0,0,0,1);
+        }
+    }
+}

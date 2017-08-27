@@ -1,0 +1,13 @@
+.header {
+    width: 100%;
+    height: 100px;
+    
+    &__logo {
+        position: relative;
+        text-align: center;
+        font-family: $header-font;
+        font-size: $big-font;
+        padding-top: 30px;
+        color: $gray-color;
+    }
+}

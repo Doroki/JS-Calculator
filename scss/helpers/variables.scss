@@ -1,0 +1,43 @@
+
+//----------  BACKGROUND IMAGE  ----------//
+$bg-image: url("../img/hip-square.png") repeat;
+//========================================================
+//This pattern is downloaded from www.subtlepatterns.com 
+//If you need more, that's where to get'em.
+//========================================================
+
+
+//----------  FONTS  ----------//
+$header-font: 'Black Ops One', cursive;
+$calculator-font: 'Orbitron', sans-serif;
+
+// font size
+$big-font: 4em;
+$normal-font: 2em;
+$small-font: 1em;
+
+
+//------------------------------//
+//  COLORS
+//------------------------------//
+$gray-color: #4A4A4A;
+
+//calculator body color
+$calc-color: #3A3C47;
+
+$calc-main: $calc-color;
+$calc-secondary: lighten($calc-color, 30%);
+$calc-vertical-border: lighten($calc-color, 10%);
+$calc-horizontal-border: darken($calc-color, 5%);
+
+//calculator screen color
+$calc-screen: #cccccc;
+$calc-screen-border: #e6e6e6;
+
+//calculator button color
+$calc-button-color: #323232;
+$btn-active-color: #DAC823;
+
+$btn-main-color: $calc-button-color;
+$btn-secondary-color: darken($calc-button-color, 25%);
+$btn-shadow-color: darken($calc-button-color, 5%);
