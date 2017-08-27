@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Kalkulator</title>
+	<link href="https://fonts.googleapis.com/css?family=Orbitron:500" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Black+Ops+One" rel="stylesheet">
+	<link rel="stylesheet" href="css/main.css" type="text/css">
+</head>
+
+<body>
+
+	<header class="header">
+		<h1 class="header__logo">KALKULATOR</h1>
+	</header>
+
+	<main class="calc">
+		<section class="calc__box"> 
+			<h2 class="calc__header">BASIC</h2>
+			<input type="text" value="" id="upperInput" class="calc__score" readonly="readonly">
+			<input type="text" value="" id="lowerInput" class="calc__score" readonly="readonly">
+
+			<div class="calc__panel">
+				<div class="calc__number-box" id="numberBox">
+					<input type="button" class="calc__number" value="1">
+					<input type="button" class="calc__number" value="2">
+					<input type="button" class="calc__number" value="3">
+					<input type="button" class="calc__number" value="4">
+					<input type="button" class="calc__number" value="5">
+					<input type="button" class="calc__number" value="6">
+					<input type="button" class="calc__number" value="7">
+					<input type="button" class="calc__number" value="8">
+					<input type="button" class="calc__number" value="9">
+					<input type="button" class="calc__number calc__number--big" value="0">
+					<input type="button" class="calc__number" value=".">
+				</div>
+
+				<div class="calc__sign-box" id="signBox">
+					<input type="button" class="calc__sign calc__sign--bigger" value="C">
+					<input type="button" class="calc__sign calc__sign--bigger" value="CE">
+					<input type="button" class="calc__sign" value="+">
+					<input type="button" class="calc__sign" value="×">
+					<input type="button" class="calc__sign" value="%">
+					<input type="button" class="calc__sign" value="-">
+					<input type="button" class="calc__sign" value="÷">
+					<input type="button" class="calc__sign" value="&radic;">
+					<input type="button" class="calc__sign calc__sign--big" value="=">
+					<input type="button" class="calc__sign" value="- +">
+				</div>
+			</div>
+		</section>		
+	</main>
+
+	<footer class="footer">
+		<p> CREATED BY DAMIAN WIŚNIEWSKI</p>
+	</footer>
+	<!-- build:js js/scripts.min.js -->
+	<script src="js/script.js"></script>
+	<!-- endbuild -->
+</body>
+</html>
