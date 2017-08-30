@@ -129,6 +129,48 @@ function checkPercentOperations(sign) {
 } 
 
 
+/*----------  Keyboard Events  ----------*/
+
+function simulateEvent(element, action) {
+	var event = new Event('click');
+	element.addEventListener("click", action);
+	element.dispatchEvent(event);
+}
+
+function keyboardEvents(e) {
+	var usedSign = e.key,
+		testNumber = /\d/g,
+		testSign = /\D/g;
+	
+	if(usedSign === "=" || usedSign === "Enter"){
+		simulateEvent(summary, calculate);
+	} 
+	else if(usedSign === "Delete"){ // "C"
+		simulateEvent(clearButton[0], clear);
+	}
+	else if(usedSign === "Backspace"){ // "CE"
+		simulateEvent(clearButton[1], clear);
+	} 
+	else if	(testNumber.test(usedSign)) {
+		for(var i = 0; i<numberButton.length; i++){
+			if(usedSign === numberButton[i].value){
+				simulateEvent(numberButton[i], writeNumber);
+			}
+		} 
+	}
+	else if	(testSign.test(usedSign)) {
+		for(var i = 0; i<signButton.length; i++){
+			if(usedSign === ",") {
+				usedSign = ".";
+			}
+			if(usedSign === signButton[i].value){
+				simulateEvent(signButton[i], writeSign);
+			}
+		}
+	}
+	
+}
+
 /*====================================================================
 =                            MAIN FUNCTIONS                          =
 ====================================================================*/
@@ -331,44 +373,6 @@ summary.addEventListener("click", calculate);
 
 calculator.addEventListener("click", checkScreenLength);
 
-
-/*----------  keyboard Events  ----------*/
-
-document.addEventListener("keydown", function(e){
-
-	if(e.key === "=" || e.key === "Enter"){
-		var event = new Event('click');
-		summary.addEventListener("click", calculate);
-		summary.dispatchEvent(event);
-	} 
-	else if(e.key === "Delete"){ // "C"
-		var event = new Event('click');
-		clearButton[0].addEventListener("click", clear);
-		clearButton[0].dispatchEvent(event);
-	}
-	else if(e.key === "Backspace"){ // "CE"
-		var event = new Event('click');
-		clearButton[1].addEventListener("click", clear);
-		clearButton[1].dispatchEvent(event);
-	} else {
-		for(var i = 0; i<numberButton.length; i++){
-			if(e.key === numberButton[i].value){
-
-				var event = new Event('click');
-				numberButton[i].addEventListener('click', writeNumber);
-				numberButton[i].dispatchEvent(event);
-			}
-		} 
-
-		for(var i = 0; i<signButton.length; i++){
-			if(e.key === signButton[i].value){
-				var event = new Event('click');
-				signButton[i].addEventListener('click', writeSign);
-				signButton[i].dispatchEvent(event);
-			}
-		}
-	}
-	
-});
+document.addEventListener("keydown", keyboardEvents);
 
 /*============  End of EVENTS  =============*/
