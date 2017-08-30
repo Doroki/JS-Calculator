@@ -17,7 +17,7 @@
 	</header>
 
 	<main class="calc">
-		<section class="calc__box"> 
+		<section id="calculator" class="calc__box"> 
 			<h2 class="calc__header">BASIC</h2>
 			<input type="text" value="" id="upperInput" class="calc__score" readonly="readonly">
 			<input type="text" value="" id="lowerInput" class="calc__score" readonly="readonly">
@@ -34,27 +34,27 @@
 					<input type="button" class="calc__number" value="8">
 					<input type="button" class="calc__number" value="9">
 					<input type="button" class="calc__number calc__number--big" value="0">
-					<input type="button" class="calc__number" value=".">
+					<input type="button" name="sign" class="calc__sign" value=".">
 				</div>
 
 				<div class="calc__sign-box" id="signBox">
-					<input type="button" class="calc__sign calc__sign--bigger" value="C">
-					<input type="button" class="calc__sign calc__sign--bigger" value="CE">
-					<input type="button" class="calc__sign" value="+">
-					<input type="button" class="calc__sign" value="×">
-					<input type="button" class="calc__sign" value="%">
-					<input type="button" class="calc__sign" value="-">
-					<input type="button" class="calc__sign" value="÷">
-					<input type="button" class="calc__sign" value="&radic;">
-					<input type="button" class="calc__sign calc__sign--big" value="=">
-					<input type="button" class="calc__sign" value="- +">
+					<input type="button" name="clear" class="calc__sign calc__sign--bigger" value="C">
+					<input type="button" name="clear" class="calc__sign calc__sign--bigger" value="CE">
+					<input type="button" name="sign" class="calc__sign" value="+">
+					<input type="button" name="sign" class="calc__sign" value="×">
+					<input type="button" name="sign" class="calc__sign" value="%">
+					<input type="button" name="sign" class="calc__sign" value="-">
+					<input type="button" name="sign" class="calc__sign" value="÷">
+					<input type="button" name="sign" class="calc__sign" value="√">
+					<input type="button" id="summary" class="calc__sign calc__sign--big" value="=">
+					<input type="button" id="change-value" class="calc__sign" value="- +">
 				</div>
 			</div>
 		</section>		
 	</main>
 
 	<footer class="footer">
-		<p> CREATED BY DAMIAN WIŚNIEWSKI</p>
+		<p>CREATED BY DAMIAN WIŚNIEWSKI</p>
 	</footer>
 	<!-- build:js js/scripts.min.js -->
 	<script src="js/script.js"></script>
