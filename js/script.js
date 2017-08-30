@@ -26,7 +26,7 @@ function checkScreenLength() {
 		lowerInput.style.fontSize = "";
 	}
 
-	if (lowerInput.value.length >= 17) {
+	if (upperInput.value.length >= 17) {
 		upperInput.style.fontSize = "1.2em";
 	} else if(upperInput.value.length >= 12) {
 		upperInput.style.fontSize = "1.5em";
@@ -137,7 +137,7 @@ function writeNumber(number) {
 		upperInput.value = "";
 		number1 = parseFloat(lowerInput.value = number.target.value);
 		number2 = parseFloat(upperInput.value);
-	} else if (existedSign.signLowScreen === "0") { // PREVIOUS OPERATION WAS FINISHED - CLEAR SCREEN THAN ADD NUMBER
+	} else if (lowerInput.value === "0") { // PREVIOUS OPERATION WAS FINISHED - CLEAR SCREEN THAN ADD NUMBER
 		number1 = parseFloat(lowerInput.value = number.target.value);
 	} else { // ADD NUMBER TO SCREEN
 		number1 = parseFloat(lowerInput.value += number.target.value);
