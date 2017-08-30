@@ -115,6 +115,14 @@ function checkPercentOperations(sign) {
 
 		if (existedSign.signUpScreen === "×"){ 
 			return true;
+		} else if(existedSign.signUpScreen === "+" || existedSign.signUpScreen === "-") {
+			calculate(action);
+			number1 = parseFloat(lowerInput.value);
+			upperInput.value += action;
+			action = existedSign.signUpScreen;
+			return false;
+		} else if(existedSign.signUpScreen === "÷") {
+			return null;
 		} else {
 			return false;
 		}		
@@ -179,6 +187,8 @@ function writeSign(sign) {
 			
 			if(operation === true) {
 				lowerInput.value += action;
+				calculate(action);
+			} if(operation === false) {
 				calculate(action);
 			} 
 			break;
@@ -280,6 +290,10 @@ function result(total) {
 		number2 = total;
 		upperInput.value = "";
 		calculate ();
+	} else if (existedSign.signUpScreen === "%") { // WRONG OPERATIONS
+		upperInput.value = upperInput.value.slice(0,-2);
+		upperInput.value += "%=";
+		lowerInput.value = total;
 	} else if (total === "" || isNaN(total) === true) { // WRONG OPERATIONS
 		alert("Nieprawidłowa operacja");
 		lowerInput.value = "";
