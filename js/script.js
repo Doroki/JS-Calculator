@@ -137,7 +137,7 @@ function writeNumber(number) {
 		upperInput.value = "";
 		number1 = parseFloat(lowerInput.value = number.target.value);
 		number2 = parseFloat(upperInput.value);
-	} else if (existedSign.signLowScreen === "0") { // PREVIOUS OPERATION WAS FINISHED - CLEAR SCREEN THAN ADD NUMBER
+	} else if (lowerInput.value === "0") { // PREVIOUS OPERATION WAS FINISHED - CLEAR SCREEN THAN ADD NUMBER
 		number1 = parseFloat(lowerInput.value = number.target.value);
 	} else { // ADD NUMBER TO SCREEN
 		number1 = parseFloat(lowerInput.value += number.target.value);
