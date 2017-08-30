@@ -152,7 +152,7 @@ function writeNumber(number) {
 		number2 = parseFloat(upperInput.value);
 	}
 	
-	return number1, number2; 	
+	return number1, number2, false; 	
 }
 
 
@@ -330,5 +330,45 @@ changeValue.addEventListener("click", minus);
 summary.addEventListener("click", calculate);
 
 calculator.addEventListener("click", checkScreenLength);
+
+
+/*----------  keyboard Events  ----------*/
+
+document.addEventListener("keydown", function(e){
+
+	if(e.key === "=" || e.key === "Enter"){
+		var event = new Event('click');
+		summary.addEventListener("click", calculate);
+		summary.dispatchEvent(event);
+	} 
+	else if(e.key === "Delete"){ // "C"
+		var event = new Event('click');
+		clearButton[0].addEventListener("click", clear);
+		clearButton[0].dispatchEvent(event);
+	}
+	else if(e.key === "Backspace"){ // "CE"
+		var event = new Event('click');
+		clearButton[1].addEventListener("click", clear);
+		clearButton[1].dispatchEvent(event);
+	} else {
+		for(var i = 0; i<numberButton.length; i++){
+			if(e.key === numberButton[i].value){
+
+				var event = new Event('click');
+				numberButton[i].addEventListener('click', writeNumber);
+				numberButton[i].dispatchEvent(event);
+			}
+		} 
+
+		for(var i = 0; i<signButton.length; i++){
+			if(e.key === signButton[i].value){
+				var event = new Event('click');
+				signButton[i].addEventListener('click', writeSign);
+				signButton[i].dispatchEvent(event);
+			}
+		}
+	}
+	
+});
 
 /*============  End of EVENTS  =============*/
