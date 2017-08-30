@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded", function(){
+
 var number1;
 var number2;
 var action;  // storage of sign ("+", "-", "÷", "×")
@@ -374,5 +376,8 @@ summary.addEventListener("click", calculate);
 calculator.addEventListener("click", checkScreenLength);
 
 document.addEventListener("keydown", keyboardEvents);
+document.addEventListener("keydown", checkScreenLength);
 
 /*============  End of EVENTS  =============*/
+
+});
