@@ -26,7 +26,7 @@ function checkScreenLength() {
 		lowerInput.style.fontSize = "";
 	}
 
-	if (lowerInput.value.length >= 17) {
+	if (upperInput.value.length >= 17) {
 		upperInput.style.fontSize = "1.2em";
 	} else if(upperInput.value.length >= 12) {
 		upperInput.style.fontSize = "1.5em";
