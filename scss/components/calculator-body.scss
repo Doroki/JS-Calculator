@@ -1,5 +1,5 @@
 .calc {
-
+    appearance: none;
     &__box {
         width: 420px;
         height: 440px;
@@ -13,6 +13,7 @@
         border-right: 10px solid $calc-horizontal-border;
         border-left: 10px solid $calc-horizontal-border;
         border-radius: 15px;
+        appearance: none;
 
         @include queries(larger){
             width: 100%;
@@ -33,6 +34,7 @@
     &__panel {
         width: 100%;
         margin: 10px auto;
+        appearance: none;
 
         &:after {
             content: "";
