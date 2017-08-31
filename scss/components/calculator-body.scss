@@ -5,6 +5,7 @@
         height: 440px;
         margin: auto;
         text-align: center;
+        background-color: $calc-main;
         background-image: radial-gradient(ellipse farthest-side at center top, $calc-secondary 10%, $calc-main 130%);
         box-shadow: 0px 0px 70px -2px rgba(0,0,0,1);
         border-bottom: 20px solid $calc-vertical-border;
@@ -15,6 +16,10 @@
 
         @include queries(larger){
             width: 100%;
+        }
+
+        @include queries(small){
+            height: 400px;
         }
     }
         
