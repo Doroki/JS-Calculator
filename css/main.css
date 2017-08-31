@@ -45,7 +45,10 @@ table {
 
 * {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box; }
+          box-sizing: border-box;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none; }
 
 /*=====  End of Reset CSS  ======*/
 html, body {
@@ -107,40 +110,48 @@ body {
 /*=============================================
 =            COMPONENTS            =
 =============================================*/
-.calc__box {
-  width: 420px;
-  height: 440px;
-  margin: auto;
-  text-align: center;
-  background-color: #3A3C47;
-  background-image: radial-gradient(ellipse farthest-side at center top, #828598 10%, #3A3C47 130%);
-  -webkit-box-shadow: 0px 0px 70px -2px black;
-          box-shadow: 0px 0px 70px -2px black;
-  border-bottom: 20px solid #515463;
-  border-top: 20px solid #515463;
-  border-right: 10px solid #2f3039;
-  border-left: 10px solid #2f3039;
-  border-radius: 15px; }
-  @media (max-width: 440px) {
-    .calc__box {
-      width: 100%; } }
-  @media (max-width: 330px) {
-    .calc__box {
-      height: 400px; } }
-
-.calc__header {
-  font-family: "Black Ops One", cursive;
-  font-size: 1.5em;
-  padding-top: 10px;
-  color: #4A4A4A; }
-
-.calc__panel {
-  width: 100%;
-  margin: 10px auto; }
-  .calc__panel:after {
-    content: "";
-    display: block;
-    clear: both; }
+.calc {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none; }
+  .calc__box {
+    width: 420px;
+    height: 440px;
+    margin: auto;
+    text-align: center;
+    background-color: #3A3C47;
+    background-image: radial-gradient(ellipse farthest-side at center top, #828598 10%, #3A3C47 130%);
+    -webkit-box-shadow: 0px 0px 70px -2px black;
+            box-shadow: 0px 0px 70px -2px black;
+    border-bottom: 20px solid #515463;
+    border-top: 20px solid #515463;
+    border-right: 10px solid #2f3039;
+    border-left: 10px solid #2f3039;
+    border-radius: 15px;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none; }
+    @media (max-width: 440px) {
+      .calc__box {
+        width: 100%; } }
+    @media (max-width: 330px) {
+      .calc__box {
+        height: 400px; } }
+  .calc__header {
+    font-family: "Black Ops One", cursive;
+    font-size: 1.5em;
+    padding-top: 10px;
+    color: #4A4A4A; }
+  .calc__panel {
+    width: 100%;
+    margin: 10px auto;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none; }
+    .calc__panel:after {
+      content: "";
+      display: block;
+      clear: both; }
 
 .calc__number-box, .calc__sign-box {
   float: left;
@@ -155,6 +166,7 @@ body {
   margin: 5px;
   border-radius: 10%;
   border: none;
+  padding: 0;
   cursor: pointer;
   color: lightgray;
   font-size: 1.5em;
@@ -198,7 +210,9 @@ body {
   text-align: right;
   -webkit-appearance: none;
      -moz-appearance: none;
-          appearance: none; }
+          appearance: none;
+  padding: 0;
+  margin: 0; }
   .calc__score:first-of-type {
     margin-top: 10px;
     border-bottom: 1px dashed lightgray;
