@@ -311,11 +311,11 @@ function calculate () {
 	switch (action) {
 		case "-":
 			total = number2 - number1;
-			total = total.toFixed(presision);
+			total = parseFloat(total.toFixed(presision));
 			break;
 		case "+":
 			total = number2 + number1;
-			total = total.toFixed(presision);
+			total = parseFloat(total.toFixed(presision));
 			break;
 		case "÷":
 			if (number1===0) total = "Nie dziel przez zero!!!";
