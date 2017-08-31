@@ -52,6 +52,17 @@ function checkExistedSign(screen1, screen2) {
 		}
 }
 
+function checkDecimental() {
+	var testNum1 = number1.toString(),
+		testNum2 = number2.toString(),
+		indexDot1 = testNum1.indexOf("."),
+		indexDot2 = testNum2.indexOf("."),
+		Dot1 = testNum1.slice(indexDot1).length -1,
+		Dot2 = testNum2.slice(indexDot2).length -1;
+		
+		return Math.max(Dot1, Dot2);
+}
+
 /*----------  Check Basic Operations (for signs "+, -, ×, ÷")  ----------*/
 
 function checkBasicOperation(sign) {
@@ -295,13 +306,16 @@ function clear(sign) {
 
 function calculate () {
 	var total; 
+	var presision = checkDecimental();
 
 	switch (action) {
 		case "-":
 			total = number2 - number1;
+			total = total.toFixed(presision);
 			break;
 		case "+":
 			total = number2 + number1;
+			total = total.toFixed(presision);
 			break;
 		case "÷":
 			if (number1===0) total = "Nie dziel przez zero!!!";
