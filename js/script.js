@@ -67,7 +67,7 @@ function checkDecimental() {
 		Dot1 = testNum1.slice(indexDot1).length -1,
 		Dot2 = testNum2.slice(indexDot2).length -1;
 	
-	if (action === "+" || action === "-") {
+	if (action === "+" || action === "-" || action === "÷") {
 		return Math.max(Dot1, Dot2);
 	} else if (action === "×") {
 		return Dot1 + Dot2;
@@ -328,11 +328,13 @@ function calculate () {
 		case "+":
 			total = number2 + number1;
 			total = total.round(presision);
-			console.log(total);
 			break;
 		case "÷":
-			if (number1===0) total = "Nie dziel przez zero!!!";
-			else total = number2 / number1;
+			if (number1===0) { total = "Nie dziel przez zero!!!"; }
+			else {
+				total = number2 / number1;
+				total = total.round(presision);
+			}
 			break;		
 		case "×":
 			total = number2 * number1;
