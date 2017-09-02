@@ -52,6 +52,13 @@ function checkExistedSign(screen1, screen2) {
 		}
 }
 
+
+/*----------  check decimental  ----------*/
+
+Number.prototype.round = function(precision) {
+	return +(Math.round(this+"e+"+precision) + "e-" +precision);
+}
+
 function checkDecimental() {
 	var testNum1 = number1.toString(),
 		testNum2 = number2.toString(),
@@ -59,8 +66,13 @@ function checkDecimental() {
 		indexDot2 = testNum2.indexOf("."),
 		Dot1 = testNum1.slice(indexDot1).length -1,
 		Dot2 = testNum2.slice(indexDot2).length -1;
-		
+	
+	if (action === "+" || action === "-" || action === "÷") {
 		return Math.max(Dot1, Dot2);
+	} else if (action === "×") {
+		return Dot1 + Dot2;
+	}
+	
 }
 
 /*----------  Check Basic Operations (for signs "+, -, ×, ÷")  ----------*/
@@ -311,18 +323,22 @@ function calculate () {
 	switch (action) {
 		case "-":
 			total = number2 - number1;
-			total = parseFloat(total.toFixed(presision));
+			total = total.round(presision);
 			break;
 		case "+":
 			total = number2 + number1;
-			total = parseFloat(total.toFixed(presision));
+			total = total.round(presision);
 			break;
 		case "÷":
-			if (number1===0) total = "Nie dziel przez zero!!!";
-			else total = number2 / number1;
+			if (number1===0) { total = "Nie dziel przez zero!!!"; }
+			else {
+				total = number2 / number1;
+				total = total.round(presision);
+			}
 			break;		
 		case "×":
 			total = number2 * number1;
+			total = total.round(presision);
 			break;	
 		case "%":
 			total = number1 * (number2 / 100 );	
