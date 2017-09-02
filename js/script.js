@@ -71,8 +71,8 @@ function checkDecimental() {
 		return Math.max(Dot1, Dot2);
 	} else if (action === "×") {
 		return Dot1 + Dot2;
-	} else if (action === "÷") {
-		return 15;
+	} else {
+		return 16;
 	}
 	
 }
@@ -328,22 +328,18 @@ function calculate () {
 	switch (action) {
 		case "-":
 			total = number2 - number1;
-			total = total.round(presision);
 			break;
 		case "+":
 			total = number2 + number1;
-			total = total.round(presision);
 			break;
 		case "÷":
 			if (number1===0) { total = "Nie dziel przez zero!!!"; }
 			else {
 				total = number2 / number1;
-				total = total.round(presision);
 			}
 			break;		
 		case "×":
 			total = number2 * number1;
-			total = total.round(presision);
 			break;	
 		case "%":
 			total = number1 * (number2 / 100 );	
@@ -355,6 +351,7 @@ function calculate () {
 			alert("Nieprawidłowa operacja");
 			break;	
 	}	
+	total = total.round(presision);
 
 	result(total);		
 }
