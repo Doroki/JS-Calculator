@@ -67,10 +67,12 @@ function checkDecimental() {
 		Dot1 = testNum1.slice(indexDot1).length -1,
 		Dot2 = testNum2.slice(indexDot2).length -1;
 	
-	if (action === "+" || action === "-" || action === "÷") {
+	if (action === "+" || action === "-") {
 		return Math.max(Dot1, Dot2);
 	} else if (action === "×") {
 		return Dot1 + Dot2;
+	} else if (action === "÷") {
+		return 15;
 	}
 	
 }
@@ -166,6 +168,9 @@ function keyboardEvents(e) {
 	var usedSign = e.key,
 		testNumber = /\d/g,
 		testSign = /\D/g;
+
+	usedSign = (usedSign === "*") ? "×" : usedSign;
+	usedSign = (usedSign === "/") ? "÷" : usedSign;
 	
 	if(usedSign === "=" || usedSign === "Enter"){
 		simulateEvent(summary, calculate);
