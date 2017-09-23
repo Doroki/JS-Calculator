@@ -2,7 +2,7 @@
 
 **USED:**
 + HTML5
-+ CSS3 / SCSS (Flexbox layout)
++ CSS3 / SCSS
 + BEM Methodology
 + JavaScript
 + gulp.js
